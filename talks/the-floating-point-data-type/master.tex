@@ -1,0 +1,122 @@
+\documentclass[xcolor=table]{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+
+\setbeamertemplate{navigation symbols}{} % strip navigation symbols
+\usefonttheme[stillsansseriflarge]{serif} % use the sans-serif fonts (Palatino)
+
+
+\usepackage{textpos}
+\usepackage{paralist}
+\usepackage{enumitem}
+\usepackage{expdlist}
+\usepackage{subfigure}
+\usepackage{amssymb, amsmath, amsthm}
+\everymath{\displaystyle}
+
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+
+\definecolor{shade}{RGB}{240,240,240}
+
+\newcommand{\mono}[1]{\texttt{#1}}
+\newcommand{\textt}[1]{\ensuremath{\text{\mono{#1}}}}
+\newcommand{\mathmono}[1]{\ensuremath{\text{\mono{#1}}}}
+\newcommand{\nonterm}[1]{\ensuremath{\text{\mono{<#1>}}}}
+\newcommand{\term}[1]{\ensuremath{\text{\mono{`#1'}}}}
+\newcommand{\any}[0]{\ensuremath{\left\langle\bigtriangleup\right\rangle}}
+\newcommand{\D}{$\Delta$}
+
+\newcommand{\makeTable}[6][htbp!]
+{
+	\begin{table}[#1]
+	\centering
+	\begin{tabular}{#4}
+	#5\\
+	#6\\
+	\end{tabular}
+	\end{table}
+}
+
+\newcommand{\includeFigure}[4][htbp!]
+{
+	\begin{figure}[#4]
+	\centering
+	\IfDecimal{#1}
+	{
+		\includegraphics[scale=#1]{figures/#2}
+	}
+	{
+		\includegraphics[#1]{figures/#2}
+	}
+	\caption[]{#3}
+	\label{figure:#2}
+	\end{figure}
+}
+
+\usepackage{clrscode3e}
+\usepackage{verbatim}
+\usepackage{listings}
+\lstset
+{
+	tabsize=2,
+	numbers=left,
+	breaklines=true,
+%	foregroundcolor=\color{shade},
+	framexleftmargin=0.05in,
+	basicstyle=\ttfamily\small,
+	numberstyle=\tiny,
+%  keywordstyle=\color{green},
+%	stringstyle=\color{red},
+%	commentstyle=\color{ForestGreen},
+  keywords={input},
+  mathescape=true,
+  captionpos=b,
+  escapeinside={(*@}{@*)},
+  language=bash
+}
+
+%\beamertemplatenavigationsymbolsempty
+
+\setbeamercolor{title}{fg=shade,bg=black}
+\setbeamercolor{frametitle}{fg=shade}
+\setbeamercolor{normal text}{fg=shade}
+\setbeamercolor{background canvas}{bg=black}
+\setbeamercolor{normal text}{bg=black}
+
+\setbeamercolor{bibliography item}{fg=shade}
+\setbeamercolor{bibliography entry author}{fg=shade}
+\setbeamertemplate{bibliography item}[text]
+
+%\setbeamertemplate{itemize item}{{\color{shade}$\bullet$}}
+
+\newcommand{\bi}{\hspace{-12pt}$\bullet$\ \ }
+
+\def\kudos{\texttt{KUDOS}}
+
+\title{The floating-point data type}
+\subtitle{HIPERFIT}
+\author{\texttt{oleks}}
+
+\titlegraphic{\includegraphics[scale=0.5]{figures/white-float}}
+
+\usepackage{fancyvrb}
+
+%\usepackage[symbol]{footmisc}
+
+\begin{document}
+
+\begin{frame}
+
+\titlepage
+
+\end{frame}
+
+\input{significant-digits}
+
+\input{conclusion}
+
+\input{references}
+
+\end{document}
