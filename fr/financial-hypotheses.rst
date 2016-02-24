@@ -12,7 +12,7 @@ and every investor, preferring profit to loss, acts on all available
 information.
 
 The effect is that the market price reflects all relevant information about a
-stock, and stocks are thus neither under- or overvalued[Fama77]_.
+stock, and stocks are thus neither under- nor overvalued[Fama77]_.
 
 References
 ^^^^^^^^^^
