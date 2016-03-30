@@ -18,39 +18,55 @@ mv1 <- function (xs) {
 
 mv2 <- function (xs) {
   # Supposed to be a good, two-loop implementation.
-  m <- 0.0
+  n <- length(xs)
+
+  sum <- 0.0
   for (x in xs) {
-    m <- m + x
+    sum <- sum + x
   }
-  m <- m / length(xs)
-  v <- 0.0
+  mean <- sum / n
+
+  varsum <- 0.0
   for (x in xs) {
-    v <- v + (x - m)^2
+    varsum <- varsum + (x - mean)^2
   }
-  return (c(m, v/(length(xs) - 1)))
+  var <- varsum / (n - 1)
+
+  return (c(mean, var))
 }
 
 mv3 <- function(xs) {
-  # Supposed to be a bad, one-loop implementation. 
-  s <- 0.0
-  sq <- 0.0
+  # Supposed to be a bad, one-loop implementation.
+  n <- length(xs)
+
+  sum <- 0.0
+  sqsum <- 0.0
   for (x in xs) {
-    s <- s + x
-    sq <- sq + x^2
+    sum <- sum + x
+    sqsum <- sqsum + x^2
   }
 
-  return (c(s/length(xs), (sq-(s^2/length(xs)))/(length(xs)-1)))
+  mean <- sum / n
+  var <- (sqsum - (sum^2 / n)) / (n - 1)
+
+  return (c(mean, var))
 }
 
 mv4 <- function(xs) {
   # Supposed to be a good, one-loop implementation.
+  n <- length(xs)
+
   a <- xs[1]
   b <- 0.0
   for (i in 2:length(xs)) {
     b <- b + ((i-1)*(xs[i]-a)^2)/i
     a <- a + (xs[i]-a)/i
   }
-  return (c(a, b/(length(xs)-1)))
+
+  mean <- a
+  var <- b / (n - 1)
+
+  return (c(mean, var))
 }
 
 testMvs <- function(xs) {
