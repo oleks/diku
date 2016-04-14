@@ -2,7 +2,7 @@ A simple example of the "creeping crud" problem with IEEE floating point.
 
 With single-precision floats, 10 million additions of 0.1 to a starting value
 of -500,000.0 (expected value 500,000.0), here is what we get with each of
-floating point's rounding modes:
+the IEEE rounding modes:
 
     $ make
     ./sum_DOWNWARD.bin
