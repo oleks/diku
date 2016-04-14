@@ -1,6 +1,6 @@
-ADDEND="(0.1)"
 N_ADDITIONS="(10000000)"
 START_WITH="(0.0)"#-(N_ADDITIONS/2.0))"
+ADDEND="(0.1)"
 
 CC=gcc
 CFLAGS=-Wall -Werror -Wextra -pedantic -std=c11
@@ -15,9 +15,9 @@ all: sum_DOWNWARD.bin sum_UPWARD.bin sum_TONEAREST.bin sum_TOWARDZERO.bin
 sum_%.bin: sum.c Makefile
 	$(CC) $(CFLAGS) \
 		-DROUND=FE_$* \
-		-DADDEND=$(ADDEND) \
 		-DN_ADDITIONS=$(N_ADDITIONS) \
 		-DSTART_WITH=$(START_WITH) \
+		-DADDEND=$(ADDEND) \
 		$< -o $@ $(LDFLAGS)
 
 clean:
