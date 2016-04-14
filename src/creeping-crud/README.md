@@ -17,6 +17,7 @@ floating point's rounding modes:
 With double-precision floats, and 1 billion additions of 0.1 to a starting
 value of -50,000,000.0, the story is a little better, but no more encouraging:
 
+    $ make REAL=double N=1000000000 START=-50000000.0
     ./sum_DOWNWARD.bin
     49999997.176790
     ./sum_UPWARD.bin
@@ -25,3 +26,10 @@ value of -50,000,000.0, the story is a little better, but no more encouraging:
     50000000.901881
     ./sum_TOWARDZERO.bin
     49999999.235414
+
+To change the value added in each iteration, set `ADDEND`.
+
+The `Makefile` is slightly unconventional as it always recompiles the source
+code. This is because there is no way to ask if command-line arguments have
+changed since last invocation. Perhaps it would've been better as a shell
+script, but this gets the job done.

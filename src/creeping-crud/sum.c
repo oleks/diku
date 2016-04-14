@@ -10,8 +10,8 @@ int main() {
     exit(EXIT_FAILURE);
   }
 
-  REAL sum = START_WITH;
-  for (i = 0; i < N_ADDITIONS; ++i) {
+  REAL sum = START;
+  for (i = 0; i < N; ++i) {
     sum += ADDEND;
   }
   printf("%f\n", sum);

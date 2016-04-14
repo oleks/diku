@@ -1,6 +1,6 @@
-N_ADDITIONS="(10000000)"
-START_WITH="(-500000.0)"
-ADDEND="(0.1)"
+N=10000000
+START=-500000.0
+ADDEND=0.1
 REAL=float
 
 CC=gcc
@@ -17,12 +17,12 @@ sum_%.bin: sum.c Makefile
 	$(CC) $(CFLAGS) \
 		-DROUND=FE_$* \
 		-DREAL=$(REAL) \
-		-DN_ADDITIONS=$(N_ADDITIONS) \
-		-DSTART_WITH=$(START_WITH) \
-		-DADDEND=$(ADDEND) \
+		-DN="$(N)" \
+		-DSTART="$(START)" \
+		-DADDEND="$(ADDEND)" \
 		$< -o $@ $(LDFLAGS)
 
 clean:
 	rm -f *.bin
 
-.PHONY: all clean
+.PHONY: all clean Makefile
