@@ -14,7 +14,7 @@ floating point's rounding modes:
     ./sum_TOWARDZERO.bin
     527320.187500
 
-With double-precision floats, and 1 billion addition of 0.1 to a starting
+With double-precision floats, and 1 billion additions of 0.1 to a starting
 value of -50,000,000.0, the story is a little better, but no more encouraging:
 
     ./sum_DOWNWARD.bin
