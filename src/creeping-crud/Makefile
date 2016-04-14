@@ -4,7 +4,7 @@ ADDEND=0.1
 REAL=float
 
 CC=gcc
-CFLAGS=-Wall -Werror -Wextra -pedantic -std=c11
+CFLAGS=-Wall -Werror -Wextra -pedantic -std=c11 -O0
 LDFLAGS=-lm
 
 all: sum_DOWNWARD.bin sum_UPWARD.bin sum_TONEAREST.bin sum_TOWARDZERO.bin
