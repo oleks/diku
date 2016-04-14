@@ -1,3 +1,5 @@
+# "Creeping Crud" with IEEE Floating Point
+
 A simple example of the "creeping crud" problem with IEEE floating point.
 
 With single-precision floats, 10 million additions of 0.1 to a starting value
@@ -62,8 +64,7 @@ indicating, perhaps a fixed-point error analysis technique:
     ./sum_TOWARDZERO.bin
     16777216.000000
 
-Post-Scriptum
--------------
+## Post-Scriptum
 
 The `Makefile` is slightly unconventional as it always recompiles the source
 code. This is because there is no way to ask if command-line arguments have
