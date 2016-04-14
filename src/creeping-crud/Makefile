@@ -16,7 +16,7 @@ all: sum_DOWNWARD.bin sum_UPWARD.bin sum_TONEAREST.bin sum_TOWARDZERO.bin
 sum_%.bin: sum.c Makefile
 	$(CC) $(CFLAGS) \
 		-DROUND=FE_$* \
-	  -DREAL=$(REAL) \
+		-DREAL=$(REAL) \
 		-DN_ADDITIONS=$(N_ADDITIONS) \
 		-DSTART_WITH=$(START_WITH) \
 		-DADDEND=$(ADDEND) \
