@@ -6,7 +6,7 @@ int main() {
 
   fesetround(ROUND);
 
-  float sum = START_WITH;
+  REAL sum = START_WITH;
   for (i = 0; i < N_ADDITIONS; ++i) {
     sum += ADDEND;
   }
