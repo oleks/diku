@@ -33,7 +33,7 @@ To change the value added in each iteration, set `ADDEND`.
 
 For instance, this example was inspired by the example on page 120 of [John L.
 Gustafson, The End of Error: Unum Computing, CRC Press,
-2016](https://www.crcpress.com/The-End-of-Error-Unum-Computing/Gustafson/9781482239867).
+2015](https://www.crcpress.com/The-End-of-Error-Unum-Computing/Gustafson/9781482239867).
 This example can be reproduced as follows:
 
     $ make N=1000000000 ADDEND=1.0 START=0.0
