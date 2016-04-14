@@ -4,9 +4,9 @@ accuracy of numerical results remains hard to guarantee. Popular programming
 environments offer few tools for the analysis of cumulative error, or guidance
 on how to keep the resulting error low.
 
-In this short seminar, I will present some examples of how some simple
-numerical methods gone astray, and present 4 possible approaches to solving the
-problem:
+In this short seminar, I will present some examples of some simple numerical
+methods gone astray, and present 4 possible directions for improving the state
+of affairs:
 
 1. Change the way we write numerical software, e.g., encourage the use of
 inherently more accurate numerical combinators.
