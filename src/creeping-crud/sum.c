@@ -14,7 +14,7 @@
 
 
 int main() {
-  size_t i;
+  volatile size_t i;
 
   if (fesetround(ROUND) != 0) {
     fprintf(stderr, "Couldn't mandate rounding mode.\n");
@@ -23,7 +23,7 @@ int main() {
 
   feclearexcept(FE_ALL_EXCEPT);
 
-  REAL sum = START;
+  volatile REAL sum = START;
   for (i = 0; i < N; ++i) {
     sum += ADDEND;
   }
