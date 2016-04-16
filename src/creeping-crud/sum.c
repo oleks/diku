@@ -5,9 +5,15 @@
 #endif
 
 #include <fenv.h> // fesetround, FE_*
-// Signal to GCC that floating-point environment might be modified at run-time.
-// This disables some inlining as well.
-// #pragma STDC FENV_ACCESS ON // My gcc doesn't know this pragma :-S
+// If GCC adhered to the C11 standard wrt. <fenv.h> completely, we would do the
+// following:
+//
+//    Tell the compiler that floating-point environment might be modified at
+//    run-time. This disables some inlining as well:
+//
+//    #pragma STDC FENV_ACCESS ON
+//
+// Instead, this is ensured through a compiler flag. See the Makefile.
 
 #include <stdio.h> // fprintf, stderr
 #include <stdlib.h> // EXIT_*
