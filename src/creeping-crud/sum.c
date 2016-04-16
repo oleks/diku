@@ -8,8 +8,8 @@
 // If GCC adhered to the C11 standard wrt. <fenv.h> completely, we would do the
 // following:
 //
-//    Tell the compiler that floating-point environment might be modified at
-//    run-time. This disables some inlining as well:
+//    Tell the compiler that the floating-point environment might be modified
+//    at run-time. This disables some inlining as well:
 //
 //    #pragma STDC FENV_ACCESS ON
 //
