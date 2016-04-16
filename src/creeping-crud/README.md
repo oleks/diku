@@ -66,9 +66,9 @@ indicating, perhaps a fixed-point error analysis technique:
 
 ## Floating-Point Exceptions
 
-IEEE float-point is never-the-less good at marking all of the above sums as
-problematic using the floating point exceptions mechanism. To see it in action,
-set `EXCEPT` to something other than `0`:
+IEEE float-point is however good at marking all of the above sums as
+problematic using the floating point exceptions mechanism. To see this in
+action, set `EXCEPT` to something other than `0`:
 
     $ make EXCEPT=1
     ...
@@ -84,6 +84,12 @@ set `EXCEPT` to something other than `0`:
     ./sum_TOWARDZERO.bin
     INEXACT
     527320.187500
+
+Yet, the usefulness of this flag is questionable. For instance, in all of the
+following cases, the `INEXACT` flag gets set for _all_ rounding modes:
+
+  * `make REAL=double N=3 START=0.0 EXCEPT=1`
+  * `make REAL=double N=8 START=-0.4 EXCEPT=1`
 
 ## Post-Scriptum
 
