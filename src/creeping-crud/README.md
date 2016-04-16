@@ -67,8 +67,8 @@ indicating, perhaps a fixed-point error analysis technique:
 ## Floating-Point Exceptions
 
 IEEE float-point is however good at marking all of the above sums as
-problematic using the floating point exceptions mechanism. To see this in
-action, set `EXCEPT` to something other than `0`:
+problematic via the floating point exceptions mechanism. To see this in action,
+set `EXCEPT` to something other than `0`:
 
     $ make EXCEPT=1
     ...
