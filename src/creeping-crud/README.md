@@ -85,8 +85,10 @@ action, set `EXCEPT` to something other than `0`:
     INEXACT
     527320.187500
 
-Yet, the usefulness of this flag is questionable. For instance, in all of the
-following cases, the `INEXACT` flag gets set for _all_ rounding modes:
+Yet, the usefulness of this flag is questionable.
+
+For instance, in all of the following cases, the `INEXACT` flag gets set for
+_all_ rounding modes:
 
   * `make REAL=double N=3 START=0.0 EXCEPT=1`
   * `make REAL=double N=8 START=-0.4 EXCEPT=1`
