@@ -64,6 +64,27 @@ indicating, perhaps a fixed-point error analysis technique:
     ./sum_TOWARDZERO.bin
     16777216.000000
 
+## Floating-Point Exceptions
+
+IEEE float-point is never-the-less good at marking all of the above sums as
+problematic using the floating point exceptions mechanism. To see it in action,
+set `EXCEPT` to something other than `0`:
+
+    $ make EXCEPT=1
+    ...
+    ./sum_DOWNWARD.bin
+    INEXACT
+    444000.125000
+    ./sum_UPWARD.bin
+    INEXACT
+    651563.250000
+    ./sum_TONEAREST.bin
+    INEXACT
+    456549.593750
+    ./sum_TOWARDZERO.bin
+    INEXACT
+    527320.187500
+
 ## Post-Scriptum
 
 The `Makefile` is slightly unconventional as it always recompiles the source
