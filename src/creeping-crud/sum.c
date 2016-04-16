@@ -16,12 +16,12 @@
 int main() {
   size_t i;
 
-  feclearexcept(FE_ALL_EXCEPT);
-
   if (fesetround(ROUND) != 0) {
     fprintf(stderr, "Couldn't mandate rounding mode.\n");
     exit(EXIT_FAILURE);
   }
+
+  feclearexcept(FE_ALL_EXCEPT);
 
   REAL sum = START;
   for (i = 0; i < N; ++i) {
@@ -30,10 +30,11 @@ int main() {
 
 #if EXCEPT != 0
   int excepts = fetestexcept(FE_ALL_EXCEPT);
+
   if (excepts & FE_DIVBYZERO) fprintf(stderr, "DIVBYZERO\n");
-  if (excepts & FE_INEXACT) fprintf(stderr, "INEXACT\n");
-  if (excepts & FE_INVALID) fprintf(stderr, "INVALID\n");
-  if (excepts & FE_OVERFLOW) fprintf(stderr, "OVERFLOW\n");
+  if (excepts & FE_INEXACT)   fprintf(stderr, "INEXACT\n");
+  if (excepts & FE_INVALID)   fprintf(stderr, "INVALID\n");
+  if (excepts & FE_OVERFLOW)  fprintf(stderr, "OVERFLOW\n");
   if (excepts & FE_UNDERFLOW) fprintf(stderr, "UNDERFLOW\n");
 #endif
 
