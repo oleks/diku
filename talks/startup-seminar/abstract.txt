@@ -8,7 +8,7 @@ In this short seminar, I will present some examples of some simple numerical
 methods gone astray, and present 4 possible directions for improving the state
 of affairs:
 
-1. Change the way we write numerical software, (e.g., encourage the use of
+1. Change the way we write numerical software (e.g., encourage the use of
 inherently more accurate numerical combinators).
 
 2. Change the underlying numerical data types (e.g., expand upon the work with
