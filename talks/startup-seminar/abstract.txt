@@ -8,16 +8,16 @@ In this short seminar, I will present some examples of some simple numerical
 methods gone astray, and present 4 possible directions for improving the state
 of affairs:
 
-1. Change the way we write numerical software, e.g., encourage the use of
-inherently more accurate numerical combinators.
+1. Change the way we write numerical software, (e.g., encourage the use of
+inherently more accurate numerical combinators).
 
-2. Change the underlying numerical data types, e.g., expand upon the work with
-unums.
+2. Change the underlying numerical data types (e.g., expand upon the work with
+unums).
 
-3. Change the underlying runtime of high-performance numerical software, e.g.,
+3. Change the underlying runtime of high-performance numerical software (e.g.,
 using lazy arithemtic, causing recomputations with higher precisision when the
-resulting accuracy turns out insufficient.
+resulting accuracy turns out insufficient).
 
 4. Improve existing programming environments to better guide the development of
-accurate numerical software, e.g., using implicit compiler techniques, such as,
-dependent types.
+accurate numerical software (e.g., using implicit compiler techniques, such as,
+dependent types).
