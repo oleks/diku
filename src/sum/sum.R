@@ -18,14 +18,50 @@ recursive <- function (xs) {
   return (sum)
 }
 
+nondecreasing <- function (xs) {
+  N <- length(xs)
+  for (i in 1:(N - 1)) {
+
+    i1 <- which.min(xs)
+    x1 <- xs[i1]
+    xs <- xs[-i1]
+
+    i2 <- which.min(xs)
+    x2 <- xs[i2]
+    xs <- xs[-i2]
+
+    xs <- append(xs, x1 + x2)
+  }
+  return(xs)
+}
+
+nonincreasing <- function (xs) {
+  N <- length(xs)
+  for (i in 1:(N - 1)) {
+
+    i1 <- which.max(xs)
+    x1 <- xs[i1]
+    xs <- xs[-i1]
+
+    i2 <- which.max(xs)
+    x2 <- xs[i2]
+    xs <- xs[-i2]
+
+    xs <- append(xs, x1 + x2)
+  }
+  return(xs)
+}
+
 testSums <- function(xs) {
-  x <- builtin(xs)
-  y <- recursive(xs)
-  z <- x - y
-  a <- exp(x)
-  b <- exp(y)
+  x1 <- builtin(xs)
+  x2 <- recursive(xs)
+  x3 <- nondecreasing(xs)
+  x4 <- nonincreasing(xs)
+  z <- x1 - x2
+  a <- exp(x1)
+  b <- exp(x2)
   c <- a - b
-  return (c(x, y, z, a, b, c))
+  return (c(x1, x2, x3, x4))#, z, a, b, c))
 }
 
 testOrders <- function(xs) {
@@ -42,7 +78,7 @@ testOrders <- function(xs) {
     nonincr,
     abs_nondecr,
     abs_nonincr
-  ), nrow=6))
+  ), nrow=4))
 }
 
 set.seed(1337)
