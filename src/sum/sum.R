@@ -18,7 +18,7 @@ recursive <- function (xs) {
   return (sum)
 }
 
-nondecreasing <- function (xs) {
+insertmin <- function (xs) {
   N <- length(xs)
   for (i in 1:(N - 1)) {
 
@@ -35,7 +35,7 @@ nondecreasing <- function (xs) {
   return(xs)
 }
 
-nonincreasing <- function (xs) {
+insertmax <- function (xs) {
   N <- length(xs)
   for (i in 1:(N - 1)) {
 
@@ -55,8 +55,8 @@ nonincreasing <- function (xs) {
 testSums <- function(xs) {
   x1 <- builtin(xs)
   x2 <- recursive(xs)
-  x3 <- nondecreasing(xs)
-  x4 <- nonincreasing(xs)
+  x3 <- insertmin(xs)
+  x4 <- insertmax(xs)
   z <- x1 - x2
   a <- exp(x1)
   b <- exp(x2)
