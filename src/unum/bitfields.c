@@ -1,3 +1,5 @@
+// Usage: make show_bitfields.o
+
 #include <stdint.h>
 
 static struct unum {
