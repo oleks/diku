@@ -1,11 +1,18 @@
 #ifndef BITFIELDS_HPP
 #define BITFIELDS_HPP
 
-// The following class offers a C++-style approach to bit-fields, where in C we
-// might use macros and masking, or actual bit-fields. It remains to be tested
-// that bit-fields actually still are *that* slow, and that macros and masking
-// would be more intricate than this.
-
+// A C++-style approach to efficient bit-fields.
+//
+// Bitfields uses C++ templates to generate (hopefully) efficient bit-fiddling
+// code according to well-known bit-fiddling laws.
+//
+// Conventional bit-fields will do more than is necessary to access e.g. a
+// 1-bit field. See bitfields.c for an example, and in particular, try to `make
+// show_bitfields.o`.
+//
+// It remains to be tested that pure macros and masking would be more intricate
+// than this.
+//
 // Heavily inspired by:
 //
 // Andrei Alexandrescu — Writing Quick Code in C++, Quickly
