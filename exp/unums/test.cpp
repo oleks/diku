@@ -7,15 +7,16 @@ test_isZero() {
   Unum unum;
 
   // Positive zero.
-  unum.setStore(0x00);
+  unum.setStore(0);
   assert(unum.isZero() == 1);
 
   // Negative zero.
-  unum.setStore(0x01);
+  unum.setStore(1);
   assert(unum.isZero() == 1);
 
   // Not zero.
-  unum.setStore(0xff);
+  // TODO: Do something more random here.
+  unum.setStore(-1);
   assert(unum.isZero() == 0);
   unum.setStore(0x7f);
   assert(unum.isZero() == 0);
@@ -28,17 +29,20 @@ test_isNeg() {
   Unum unum;
 
   // Positive.
-  unum.setStore(0x00);
+  unum.setStore(0);
   assert(unum.isNeg() == 0);
-  unum.setStore(0xfe);
+  unum.setStore(-1);
+  unum.setSign(0);
   assert(unum.isNeg() == 0);
 
   // Negative zero.
-  unum.setStore(0x01);
+  unum.setStore(0);
+  unum.setSign(1);
   assert(unum.isNeg() == 0);
 
   // Negative.
-  unum.setStore(0xff);
+  // TODO: Do something more random here.
+  unum.setStore(-1);
   assert(unum.isNeg() == 1);
   unum.setStore(0x7f);
   assert(unum.isNeg() == 1);
@@ -49,17 +53,19 @@ test_isNaN() {
   Unum unum;
 
   // Signalling NaN.
-  unum.setStore(0xff);
+  unum.setStore(-1);
   assert(unum.isNaN() == 1);
 
   // Queit NaN.
-  unum.setStore(0xfe);
+  unum.setStore(-1);
+  unum.setSign(0);
   assert(unum.isNaN() == 1);
 
   // Not NaN.
-  unum.setStore(0x00);
+  // TODO: Do something more random here.
+  unum.setStore(0);
   assert(unum.isNaN() == 0);
-  unum.setStore(0x01);
+  unum.setStore(1);
   assert(unum.isNaN() == 0);
   unum.setStore(0x7f);
   assert(unum.isNaN() == 0);
@@ -82,6 +88,7 @@ test_isInf() {
   assert(unum.isInf() == 1);
 
   // Not ∞.
+  // TODO: Do something more random here.
   unum.setStore(-1);
   unum.setInexact(1);
   assert(unum.isInf() == 0);
