@@ -75,6 +75,11 @@ struct Bitfields {
   template <unsigned idx, unsigned acc,
     unsigned x, unsigned... xs>
   friend unsigned maskUntilImpl(Bitfields<x, xs...>);
+
+
+  template <unsigned idx, unsigned acc,
+    unsigned x, unsigned... xs>
+  friend unsigned maskImpl(Bitfields<x, xs...>);
 };
 
 
@@ -126,7 +131,7 @@ void set(Bitfields<sizes...>& bf, unsigned v)
 }
 
 
-// Get a field mask.
+// Get a mask until/after field.
 
 template <unsigned idx, unsigned acc,
   unsigned size, unsigned... sizes>
@@ -149,6 +154,35 @@ template <unsigned idx, unsigned... sizes>
 unsigned maskAfter(Bitfields<sizes...> bf)
 {
   return ~(maskUntil<idx>(bf));
+}
+
+
+// Get a field mask.
+
+template <unsigned idx, unsigned acc,
+  unsigned size, unsigned... sizes>
+unsigned maskImpl(Bitfields<size, sizes...> bf)
+{
+  static_assert(idx <= sizeof...(sizes), "Invalid bitfield access");
+  if (idx == 0) {
+    if (size == 1) { // Gotta Go Fast!
+      return 1u << acc;
+    }
+    return ((1u << size) - 1) << acc;
+  }
+  return maskImpl<idx - (idx ? 1 : 0), acc + (idx ? size : 0)>(bf);
+}
+
+template <unsigned idx, unsigned... sizes>
+unsigned mask(Bitfields<sizes...> bf)
+{
+  return maskImpl<idx, 0>(bf);
+}
+
+template <unsigned idx, unsigned... sizes>
+unsigned maskExcept(Bitfields<sizes...> bf)
+{
+  return ~(mask<idx>(bf));
 }
 
 #endif // BITFIELDS_HPP

@@ -17,10 +17,13 @@ public:
   Unum();
 
   void setStore(unsigned v);
+  void setSign(unsigned v);
+  void setInexact(unsigned v);
 
-  bool isNaN();
   bool isZero();
+  bool isNaN();
   bool isNeg();
+  bool isInf();
 };
 
 class Ubound {

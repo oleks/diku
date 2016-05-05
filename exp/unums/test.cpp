@@ -65,10 +65,41 @@ test_isNaN() {
   assert(unum.isNaN() == 0);
 }
 
+void
+test_isInf() {
+  Unum unum;
+
+  // +∞.
+  unum.setStore(-1); // TODO: Do something more random here.
+  unum.setSign(0);
+  unum.setInexact(0);
+  assert(unum.isInf() == 1);
+
+  // -∞.
+  unum.setStore(-1); // TODO: Do something more random here.
+  unum.setSign(1);
+  unum.setInexact(0);
+  assert(unum.isInf() == 1);
+
+  // Not ∞.
+  unum.setStore(-1);
+  unum.setInexact(1);
+  assert(unum.isInf() == 0);
+
+  unum.setStore(0);
+  unum.setInexact(1);
+  assert(unum.isInf() == 0);
+
+  unum.setStore(42);
+  unum.setInexact(1);
+  assert(unum.isInf() == 0);
+}
+
 int main() {
   test_isZero();
   test_isNeg();
   test_isNaN();
+  test_isInf();
 
   return 0;
 }

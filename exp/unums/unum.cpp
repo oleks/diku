@@ -12,6 +12,18 @@ Unum::setStore(unsigned v)
   this->bf.store = v;
 }
 
+void
+Unum::setSign(unsigned v)
+{
+  set<this->sign>(this->bf, v);
+}
+
+void
+Unum::setInexact(unsigned v)
+{
+  set<this->inexact>(this->bf, v);
+}
+
 bool
 Unum::isZero()
 {
@@ -36,4 +48,14 @@ Unum::isNeg()
   // In the absence of a neg summary bit..
   // A unum is negative if the sign bit is set, and it is not zero.
   return get<this->sign>(this->bf) && !this->isZero();
+}
+
+bool
+Unum::isInf()
+{
+  // In the absence of an inf summary bit..
+  // A unum is ∞ if all bits after the sign bit are 1, except a 0 inexact bit.
+  unsigned m = maskAfter<this->sign>(this->bf);
+  return (m & this->bf.store) ==
+    (m & this->bf.typeMask & maskExcept<this->inexact>(this->bf));
 }
