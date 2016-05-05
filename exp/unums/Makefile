@@ -3,10 +3,10 @@ CFLAGS=-Wall -Wextra -pedantic -std=c++11 -g
 
 all: unum.o test.bin
 
-test.bin: test.cpp bitfields.hpp unum.o unum.hpp Makefile
+test.bin: test.cpp unum.o unum.hpp Makefile
 	$(CXX) $(CFLAGS) test.cpp unum.o -o $@
 
-unum.o: unum.cpp Makefile
+unum.o: unum.cpp bitfields.hpp Makefile
 	$(CXX) $(CFLAGS) -c $<
 
 bitfields.o:
