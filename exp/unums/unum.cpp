@@ -15,10 +15,10 @@ Unum::setStore(unsigned v)
 bool
 Unum::isNaN()
 {
-  // In the absence of a zero summary bit..
+	unsigned m = maskAfter<0>(this->bf);
+  // In the absence of a nan summary bit..
   // A unum is NaN if all bits after the sign bit are 1.
-  return (getMaskAfter<0>(this->bf) & this->bf.store) ==
-    getMaskAfter<0>(this->bf);
+  return (m & this->bf.store) == (m & this->bf.typeMask);
 }
 
 bool
@@ -26,7 +26,7 @@ Unum::isZero()
 {
   // In the absence of a zero summary bit..
   // A unum is zero if all bits after the sign bit are 0.
-  return (getMaskAfter<0>(this->bf) & this->bf.store) == 0;
+  return (maskAfter<0>(this->bf) & this->bf.store) == 0;
 }
 
 bool
@@ -34,5 +34,5 @@ Unum::isNeg()
 {
   // In the absence of a neg summary bit..
   // A unum is negative if the sign bit is set, and it is not zero.
-  return (get<0>(this->bf) == 1) && !this->isZero();
+  return get<0>(this->bf) && !this->isZero();
 }
