@@ -13,21 +13,21 @@ Unum::setStore(unsigned v)
 }
 
 bool
-Unum::isNaN()
-{
-  // In the absence of a nan summary bit..
-  // A unum is NaN if all bits after the sign bit are 1.
-  unsigned m = maskAfter<this->sign>(this->bf);
-  return (m & this->bf.store) == (m & this->bf.typeMask);
-}
-
-bool
 Unum::isZero()
 {
   // In the absence of a zero summary bit..
   // A unum is zero if all bits after the sign bit are 0.
   unsigned m = maskAfter<this->sign>(this->bf);
   return (m & this->bf.store) == 0;
+}
+
+bool
+Unum::isNaN()
+{
+  // In the absence of a nan summary bit..
+  // A unum is NaN if all bits after the sign bit are 1.
+  unsigned m = maskAfter<this->sign>(this->bf);
+  return (m & this->bf.store) == (m & this->bf.typeMask);
 }
 
 bool
