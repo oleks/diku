@@ -97,7 +97,7 @@ unsigned getImpl(Bitfields<size, sizes...> bf)
 template <unsigned idx, unsigned... sizes>
 unsigned get(Bitfields<sizes...> bf)
 {
-	return getImpl<idx, 0>(bf);
+  return getImpl<idx, 0>(bf);
 }
 
 // Set a field.
@@ -122,7 +122,7 @@ void setImpl(Bitfields<size, sizes...>& bf, unsigned v)
 template <unsigned idx, unsigned... sizes>
 void set(Bitfields<sizes...>& bf, unsigned v)
 {
-	setImpl<idx, 0>(bf, v);
+  setImpl<idx, 0>(bf, v);
 }
 
 
