@@ -3,9 +3,6 @@
 
 #include "bitfields.hpp"
 
-#include <stddef.h>   // size_t
-#include <stdint.h>   // uint_fast8_t
-
 class Unum {
   Bitfields<1,2,2,1,1,1> bf;
   static const unsigned sign      = 0;
