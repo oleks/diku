@@ -48,6 +48,7 @@ template <unsigned n_bits>
 struct Store;
 
 // Specialize it for 8, 16, 32, and 64 bits.
+template <> struct Store<4>   { typedef uint_fast8_t   Type; };
 template <> struct Store<8>   { typedef uint_fast8_t   Type; };
 template <> struct Store<16>  { typedef uint_fast16_t  Type; };
 template <> struct Store<32>  { typedef uint_fast32_t  Type; };
@@ -60,6 +61,7 @@ template <unsigned... sizes>
 struct Bitfields {
   typename Store<Sum<sizes...>::value>::Type store;
 
+
   template <unsigned idx, unsigned acc,
     unsigned x, unsigned... xs>
   friend unsigned getImpl(Bitfields<x, xs...>);
@@ -67,6 +69,11 @@ struct Bitfields {
   template <unsigned idx, unsigned acc,
     unsigned x, unsigned... xs>
   friend void setImpl(Bitfields<x, xs...>&, unsigned value);
+
+
+  template <unsigned idx, unsigned acc,
+    unsigned x, unsigned... xs>
+  friend unsigned getMaskAfterImpl(Bitfields<x, xs...>);
 };
 
 
@@ -111,5 +118,25 @@ void setImpl(Bitfields<size, sizes...>& bf, unsigned v)
 
 template <unsigned idx, unsigned... sizes>
 void set(Bitfields<sizes...>& bf, unsigned v) { setImpl<idx, 0>(bf, v); }
+
+
+// Get a field mask.
+
+template <unsigned idx, unsigned acc,
+  unsigned size, unsigned... sizes>
+unsigned getMaskAfterImpl(Bitfields<size, sizes...> bf)
+{
+  static_assert(idx <= sizeof...(sizes), "Invalid bitfield access");
+  if (idx == 0) {
+    return ~((1u << size << acc) - 1);
+  }
+  return getImpl<idx - (idx ? 1 : 0), acc + (idx ? size : 0)>(bf);
+}
+
+template <unsigned idx, unsigned... sizes>
+unsigned getMaskAfter(Bitfields<sizes...> bf)
+{
+  return getMaskAfterImpl<idx, 0>(bf);
+}
 
 #endif // BITFIELDS_HPP
