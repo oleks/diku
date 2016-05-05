@@ -8,6 +8,7 @@
 
 class Unum {
   Bitfields<1,2,2,1,1,1> bf;
+	static const unsigned sign_bit = 0;
 
 public:
   Unum();
