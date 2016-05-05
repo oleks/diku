@@ -60,7 +60,7 @@ template <> struct Store<64>  { typedef uint_fast64_t  Type; };
 template <unsigned... sizes>
 struct Bitfields {
   typename Store<Sum<sizes...>::value>::Type store;
-  typename Store<Sum<sizes...>::value>::Type typeMask = (-1);
+  static const typename Store<Sum<sizes...>::value>::Type typeMask = (-1);
 
 
   template <unsigned idx, unsigned acc,
