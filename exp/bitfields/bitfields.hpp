@@ -65,63 +65,61 @@ struct Bitfields {
 
   template <unsigned idx, unsigned acc,
     unsigned x, unsigned... xs>
-  friend unsigned getImpl(Bitfields<sizes...> bf);
+  unsigned getImpl();
 
   template <unsigned idx, unsigned acc,
     unsigned x, unsigned... xs>
-  friend void setImpl(Bitfields<sizes...> bf, unsigned value);
+  void setImpl(unsigned value);
 };
 
 
 // Get a field.
 
-template <
-  unsigned... sizes,
-  unsigned idx, unsigned acc,
+template <unsigned... sizes>
+template <unsigned idx, unsigned acc,
   unsigned x, unsigned... xs>
-unsigned getImpl(Bitfields<sizes...> bf)
+unsigned Bitfields<sizes...>::getImpl()
 {
   static_assert(idx <= sizeof...(xs), "Invalid bitfield access");
   if (idx == 0) {
     if (x == 1) { // Gotta Go Fast!
-      return (bf.store & 1u << acc) != 0;
+      return (this->store & 1u << acc) != 0;
     }
-    return (bf.store >> acc) & ((1u << x) - 1);
+    return (this->store >> acc) & ((1u << x) - 1);
   }
-  return getImpl<idx - 1, acc + x, xs...>(bf);
+  return this->getImpl<idx - 1, acc + x, xs...>();
 }
 
 template <unsigned idx, unsigned x, unsigned... xs>
 unsigned get(Bitfields<x, xs...> bf)
 {
-  return getImpl<idx, 0, x, xs...>(bf);
+  return bf.getImpl<idx, 0, x, xs...>();
 }
 
 // Set a field.
 
-template <
-  unsigned... sizes,
-  unsigned idx, unsigned acc,
+template <unsigned... sizes>
+template <unsigned idx, unsigned acc,
   unsigned x, unsigned... xs>
-void setImpl(Bitfields<sizes...> bf, unsigned v)
+void Bitfields<sizes...>::setImpl(unsigned v)
 {
   static_assert(idx <= sizeof...(xs), "Invalid bitfield access");
   if (idx == 0) {
     if (x == 1) { // Gotta Go Fast!
-      bf.store = (bf.store & ~(1u << acc)) | ((v & 1u) << acc);
+      this->store = (this->store & ~(1u << acc)) | ((v & 1u) << acc);
     } else {
       unsigned m = (1u << x) - 1;
-      bf.store = (bf.store & ~(m << acc)) | ((v & m) << acc);
+      this->store = (this->store & ~(m << acc)) | ((v & m) << acc);
     }
     return;
   }
-  setImpl<idx - 1, acc + x, xs...>(bf, v);
+  this->setImpl<idx - 1, acc + x, xs...>(v);
 }
 
 template <unsigned idx, unsigned x, unsigned... xs>
 void set(Bitfields<x, xs...>& bf, unsigned v)
 {
-  setImpl<idx, 0, x, xs...>(bf, v);
+  bf.setImpl<idx, 0, x, xs...>(v);
 }
 
 #endif // BITFIELDS_HPP
