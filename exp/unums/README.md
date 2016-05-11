@@ -149,8 +149,8 @@ Or by reducing the precision:
 
 11 summary bits is beginning to sound a bit like "overfitting".
 
-Juggling exponent and fraction maximum sizes is costly — they are halved or
-doubled every time.
+Juggling exponent and fraction maximum sizes is costly — they are roughly
+halved or doubled every time.
 
 ### 64 bits
 
