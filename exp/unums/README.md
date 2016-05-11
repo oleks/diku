@@ -69,7 +69,7 @@ The `negative` summary bit is useful as there is both a positive and negative
 zero, so checking the sign bit is insufficient to tell if a value is strictly
 negative or not. The sign bit is also insufficient to tell if a value is less
 than or equal to zero, again because there is also a positive zero. Checking
-for zero requires comparing both exponent and fraction to zero.
+for zero requires checking if both exponent and fraction bits are set.
 
 The `nan` summary bit is useful for a similar reason, checking for NaN requires
 check if all bits, expect perhaps the sign bit, are set.
