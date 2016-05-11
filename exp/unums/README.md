@@ -76,8 +76,7 @@ checking if _all_ bits, expect perhaps the sign bit, are set.
 
 Another useful summary bit, which can put in place of either `negative` or
 `nan`, is a so-called `2nd` bit, indicating whether the unum is the second unum
-in a ubound or not. That is, if it pays off to not keep track of this
-information extrinsically.
+in a ubound or not. That is, if this information can't be stored extrinsically.
 
 ### 16 bits
 
