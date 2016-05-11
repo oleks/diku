@@ -13,8 +13,8 @@ A unum is composed of 6 fields:
 
 The exponent and fraction sizes are biased by 1.
 
-TODO: There may be benefits to fixing the exponent and fraction field sizes at
-compile time for certain applications.
+**Hypothesis**: There may be benefits to fixing the exponent and fraction field
+sizes at compile time for certain applications.
 
 ## Unum Layout With Conventional Bit-Widths
 
