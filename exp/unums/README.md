@@ -81,8 +81,8 @@ Other possible summary bits include:
   * The `zero` summary, indicating whether the unum is positive or negative
     zero.
   * The `inf` summary bit, indicating whether the unum is positive or negative
-    infinity. A unum is infinity if all bits after the sign are 1, except a 0
-    inexact bit.
+    infinity. A unum is infinity if all bits after the sign bit are 1, except
+    a 0 inexact bit.
   * The`2nd` bit, indicating whether the unum is the second unum
     in a ubound or not. This information might often be best stored
     extrensically.
