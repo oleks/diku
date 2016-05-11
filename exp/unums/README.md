@@ -62,8 +62,8 @@ Alternatively, we can introduce two summary bits:
 
 Summary bits are great as they require no shifts, and it can suffice to
 and-mask the representation and compare that with 0. It is noteworthy, that
-conventional C bit-fields do not optimize bit access as (e.g., try to `make
-show_bitfields.o`, or see `bitfields.c` for the source code).
+conventional C compilers do not optimize bit-field access (e.g., try to `make
+show_bitfields.o` and see `bitfields.c` for the source code).
 
 The `negative` summary bit is useful as there is both a positive and negative
 zero, so checking the sign bit is insufficient to tell if a value is strictly
