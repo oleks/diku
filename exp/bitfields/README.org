@@ -1,6 +1,6 @@
 #+TITLE: Experiments with bit-fields
 
 Conventional C/C++ compilers do not optimize bit-field access. For instance,
-[bitfields.c](bitfields.c) defines a C-struct with 1-bit bit-fields, and
+[[bitfields.c][./bitfields.c]] defines a C-struct with 1-bit bit-fields, and
 attempts to acess them. An always access takes a shift and a bit mask, even
 when a bit mask could suffice.
