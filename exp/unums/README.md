@@ -71,7 +71,7 @@ negative or not. The sign bit is also insufficient to tell if a value is less
 than or equal to zero, again because there is also a positive zero. Checking
 for zero requires checking if both exponent and fraction bits are set.
 
-The `nan` summary bit is useful for a similar reason, checking for NaN requires
+The `nan` summary bit is useful for a similar reason: checking for NaN requires
 checking if _all_ bits, expect perhaps the sign bit, are set.
 
 Another useful summary bit, which can put in place of either `negative` or
