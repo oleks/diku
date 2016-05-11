@@ -89,72 +89,73 @@ Other possible summary bits include:
 
 ### 16 bits
 
-If we think summary bits were a bad idea, we can gain a lot both in range and
-precision:
+One option is no summary and low range, but good precision:
 
-* `sign`: 1
-* `exponent`: 5 (max)
-* `fraction`: 5 (max)
-* `inexact`: 1
-* `esize`: 2
-* `fsize`: 2
-
-Range however, is perhaps less important than precision, leaving space for
-4 summary bits:
-
-* Summary: 4
 * `sign`: 1
 * `exponent`: 2 (max)
-* `fraction`: 5 (max)
+* `fraction`: 8 (max)
+* `inexact`: 1
+* `esize`: 1
+* `fsize`: 3
+
+We could gain summary bits by reducing the precision:
+
+* Summary: 5
+* `sign`: 1
+* `exponent`: 2 (max)
+* `fraction`: 4 (max)
 * `inexact`: 1
 * `esize`: 1
 * `fsize`: 2
 
-Three possible summary bits were described above. Two other useful summary bits
-are `inf` and `zero` to check for infinity, and zero respectively.
-
-### 32 bits
-
-With 32 bits, we get slightly less freedom.
-
-One option to have two summary bits, but keep a fairly high range:
+Another option is lower precision, and higher range, and two bits of summary:
 
 * Summary: 2
 * `sign`: 1
-* `exponent`: 5 (max)
-* `fraction`: 17 (max)
+* `exponent`: 4 (max)
+* `fraction`: 4 (max)
+* `inexact`: 1
+* `esize`: 2
+* `fsize`: 2
+
+### 32 bits
+
+Here is a fairly good fit:
+
+* Summary: 5
+* `sign`: 1
+* `exponent`: 4 (max)
+* `fraction`: 16 (max)
 * `inexact`: 1
 * `esize`: 2
 * `fsize`: 4
 
-We can gain summary bits by reducing the range:
+We could also increase the range at the cost of precision:
 
-* Summary: 6
+* Summary: 8
 * `sign`: 1
-* `exponent`: 2 (max)
-* `fraction`: 17 (max)
+* `exponent`: 8 (max)
+* `fraction`: 8 (max)
 * `inexact`: 1
-* `esize`: 1
-* `fsize`: 4
-
-Or by reducing the precision:
-
-* Summary: 11
-* `sign`: 1
-* `exponent`: 5 (max)
-* `fraction`: 9 (max)
-* `inexact`: 1
-* `esize`: 2
+* `esize`: 3
 * `fsize`: 3
 
-11 summary bits is beginning to sound a bit like "overfitting".
+However, 8 summary bits is beginning to sound a bit like "overfitting".
 
 Juggling exponent and fraction maximum sizes is costly — they are roughly
 halved or doubled every time.
 
 ### 64 bits
 
-TODO.
+One option is as presented in [1] on page 100:
+
+* Summary: 5
+* `sign`: 1
+* `exponent`: 16 (max)
+* `fraction`: 32 (max)
+* `inexact`: 1
+* `esize`: 4
+* `fsize`: 5
 
 ## References
 
