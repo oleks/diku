@@ -62,7 +62,7 @@ Alternatively, we can introduce two summary bits:
 
 Summary bits are great as they require no shifts, and it can suffice to
 and-mask the representation and compare that with 0. It is noteworthy, that
-conventional C compilers do not optimize bit-field access. (See also
+conventional C/C++ compilers do not optimize bit-field access. (See also
 [../bitfields](../bitfields).)
 
 The `negative` summary bit is useful as there is both a positive and negative
