@@ -72,7 +72,7 @@ than or equal to zero, again because there is also a positive zero. Checking
 for zero requires checking if both exponent and fraction bits are set.
 
 The `nan` summary bit is useful for a similar reason, checking for NaN requires
-check if all bits, expect perhaps the sign bit, are set.
+checking if _all_ bits, expect perhaps the sign bit, are set.
 
 Another useful summary bit, which can put in place of either `negative` or
 `nan`, is a so-called `2nd` bit, indicating whether the unum is the second unum
