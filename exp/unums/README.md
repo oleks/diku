@@ -117,7 +117,7 @@ are `inf` and `zero` to check for infinity, and zero respectively.
 
 With 32 bits, we get slightly less freedom.
 
-One option to have just one summary bit, bit keep a fairly high range:
+One option to have two summary bits, but keep a fairly high range:
 
 * Summary: 2
 * `sign`: 1
