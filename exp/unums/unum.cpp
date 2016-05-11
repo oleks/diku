@@ -53,6 +53,7 @@ Unum::isNeg()
 bool
 Unum::isInf()
 {
+  printf("## %x\n", mask<3>(this->bf));
   // In the absence of an inf summary bit..
   // A unum is ∞ if all bits after the sign bit are 1, except a 0 inexact bit.
   unsigned m = maskAfter<this->sign>(this->bf);

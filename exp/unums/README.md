@@ -60,7 +60,9 @@ Alternatively, we can introduce two summary bits:
 * `esize`: 0
 * `fsize`: 1
 
-Summary bits are great as they require no shifts, and it can suffice to
+### Summary bits
+
+Summary bits are great as checking them requires no shifts: it can suffice to
 and-mask the representation and compare that with 0. It is noteworthy, that
 conventional C/C++ compilers do not optimize bit-field access. (See also
 [../bitfields](../bitfields).)
@@ -74,9 +76,16 @@ for zero requires checking if both exponent and fraction bits are set.
 The `nan` summary bit is useful for a similar reason: checking for NaN requires
 checking if _all_ bits, expect perhaps the sign bit, are set.
 
-Another useful summary bit, which can put in place of either `negative` or
-`nan`, is a so-called `2nd` bit, indicating whether the unum is the second unum
-in a ubound or not. That is, if this information can't be stored extrinsically.
+Other possible summary bits include:
+
+  * The `zero` summary, indicating whether the unum is positive or negative
+    zero.
+  * The `inf` summary bit, indicating whether the unum is positive or negative
+    infinity. A unum is infinity if all bits after the sign are 1, except a 0
+    inexact bit.
+  * The`2nd` bit, indicating whether the unum is the second unum
+    in a ubound or not. This information might often be best stored
+    extrensically.
 
 ### 16 bits
 
