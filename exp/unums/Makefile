@@ -9,14 +9,8 @@ test.bin: test.cpp unum.o unum.hpp Makefile
 unum.o: unum.cpp bitfields.hpp Makefile
 	$(CXX) $(CFLAGS) -c $<
 
-bitfields.o: bitfields.c
-	gcc -nostdlib -c $<
-
-show_bitfields.o: bitfields.o Makefile
-	objdump --disassemble $<
-
 clean:
 	rm -f *.o
 	rm -f *.bin
 
-.PHONY: all clean show_*
+.PHONY: all clean
