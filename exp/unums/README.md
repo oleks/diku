@@ -147,7 +147,7 @@ halved or doubled every time.
 
 ### 64 bits
 
-One option is as presented in [1] on page 100:
+One option is as presented in [1], on page 100:
 
 * Summary: 5
 * `sign`: 1
