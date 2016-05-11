@@ -11,5 +11,5 @@ static struct unum {
 
 int main() {
   // Getting each bit-field takes a shift followed by an and-mask.
-  return unum.fraction + unum.inexact;
+  return unum.fraction == unum.inexact;
 }
