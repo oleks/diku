@@ -54,7 +54,7 @@ Alternatively, we can introduce two summary bits:
 * `negative`: 1
 * `nan`: 1
 * `sign`: 1
-* `exponent`: 1 (max)
+* `exponent`: 1 (exact)
 * `fraction`: 2 (max)
 * `inexact`: 1
 * `esize`: 0
