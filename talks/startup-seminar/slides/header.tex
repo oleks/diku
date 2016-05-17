@@ -1,0 +1,108 @@
+% Palatino font
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+
+\setbeamertemplate{navigation symbols}{} % strip navigation symbols
+\usefonttheme{serif} % use the sans-serif fonts (Palatino)
+\setbeamerfont{title}{series=\bfseries,parent=structure}
+\setbeamerfont{frametitle}{series=\bfseries,parent=structure}
+
+\usepackage{textpos}
+\usepackage{paralist}
+%\usepackage{enumitem}
+\usepackage{expdlist}
+\usepackage{subfigure}
+\usepackage{amssymb, amsmath, amsthm}
+\everymath{\displaystyle}
+
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+
+\definecolor{shade}{RGB}{250,250,250}
+\definecolor{blue}{RGB}{0,76,153}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\mono}[1]{\texttt{#1}}
+\newcommand{\textt}[1]{\ensuremath{\text{\mono{#1}}}}
+\newcommand{\mathmono}[1]{\ensuremath{\text{\mono{#1}}}}
+\newcommand{\nonterm}[1]{\ensuremath{\text{\mono{<#1>}}}}
+\newcommand{\term}[1]{\ensuremath{\text{\mono{`#1'}}}}
+\newcommand{\any}[0]{\ensuremath{\left\langle\bigtriangleup\right\rangle}}
+\newcommand{\D}{$\Delta$}
+
+\newcommand{\makeTable}[6][htbp!]
+{
+	\begin{table}[#1]
+	\centering
+	\begin{tabular}{#4}
+	#5\\
+	#6\\
+	\end{tabular}
+	\end{table}
+}
+
+\newcommand{\includeFigure}[4][htbp!]
+{
+	\begin{figure}[#4]
+	\centering
+	\IfDecimal{#1}
+	{
+		\includegraphics[scale=#1]{figures/#2}
+	}
+	{
+		\includegraphics[#1]{figures/#2}
+	}
+	\caption[]{#3}
+	\label{figure:#2}
+	\end{figure}
+}
+
+\usepackage{clrscode3e}
+\usepackage{verbatim}
+\usepackage{listings}
+\lstset
+{
+	tabsize=2,
+	numbers=left,
+	breaklines=true,
+%	foregroundcolor=\color{shade},
+	framexleftmargin=0.05in,
+	basicstyle=\ttfamily\footnotesize,
+	numberstyle=\tiny,
+%  keywordstyle=\color{green},
+%	stringstyle=\color{red},
+%	commentstyle=\color{ForestGreen},
+  keywords={input},
+  mathescape=true,
+  captionpos=b,
+  columns=fullflexible,
+%  escapeinside={(*@}{@*)},
+  mathescape=false,
+  language=bash
+}
+
+\setbeamercolor{title}{fg=blue,bg=shade}
+\setbeamercolor{frametitle}{fg=blue,bg=shade}
+\setbeamercolor{normal text}{fg=blue,bg=shade}
+\setbeamercolor{background canvas}{bg=shade}
+\setbeamercolor{normal text}{fg=blue,bg=shade}
+
+\setbeamercolor{bibliography item}{fg=blue}
+\setbeamercolor{bibliography entry author}{fg=blue}
+\setbeamertemplate{bibliography item}[text]
+
+\usepackage{fancyvrb}
+
+\newcommand{\question}[1]%
+{%
+  \begin{center}%
+  \Large \textbf{#1}%
+  \end{center}%
+}
+
+\newcommand{\answer}[1]%
+{%
+  \begin{flushright}%
+  --- #1%
+  \end{flushright}%
+}
