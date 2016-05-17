@@ -93,6 +93,19 @@ _all_ rounding modes:
   * `make REAL=double N=3 START=0.0 EXCEPT=1`
   * `make REAL=double N=8 START=-0.4 EXCEPT=1`
 
+## Ties to Even / Ties Away from Zero
+
+The `TONEAREST` rounding mode breaks ties to even. This is not the only way
+defined by IEEE-754, 2008. There is also breaking ties away from zero.
+
+A similar inconsistency leads to a range of inconsistencies between the
+printing of floating-point numbers in various programming environment. (See
+Rick Regan. _Inconsistent Rounding of Printed Floating-Point Numbers_.
+Exploring Binary. 2016-05-17.
+http://www.exploringbinary.com/inconsistent-rounding-of-printed-floating-point-numbers/.
+Accessed: 2016-05-17. (Archived by WebCite® at
+http://www.webcitation.org/6hZvweIx3)
+
 ## Post-Scriptum
 
 The `Makefile` is slightly unconventional as it always recompiles the source
