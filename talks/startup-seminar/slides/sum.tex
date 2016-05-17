@@ -1,0 +1,40 @@
+\begin{frame}
+
+Computing the sum of a non-empty set of numbers:
+
+\begin{codebox}
+\Procname{$\proc{Sum}\p{S}$}
+\li \While $\card{S}>1$ \Do
+\li   $x\gets \proc{Pop}(S)$
+\li   $y\gets \proc{Pop}(S)$
+\li   $\proc{Push}(S, \circ\p{x+y})$
+\End
+\li \Return $\proc{Pop}(S)$
+\end{codebox}
+
+\begin{itemize}
+
+\item Cardinality of $S$ decreases in every iteration.
+
+\item $n-1$ additions, where $n$ is the initial cardinality of $S$.
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+
+\begin{align}
+= & \p{\p{x_1 + x_2} \cdot \p{1 + \delta_2} + x_3} %
+      \cdot \p{1 + \delta_3} \\
+= & \p{x_1 + x_2 + x_1 \cdot \delta_2 + x_2 \cdot \delta_2 + x_3} %
+      \cdot \p{1 + \delta_3} \\
+= & x_1 + x_2 + x_1 \cdot \delta_2 + x_2 \cdot \delta_2 + x_3 + \\
+  & x_1 \cdot \delta_3 + x_2 \cdot \delta_3 + %
+        x_1 \cdot \delta_2 \cdot \delta_3 + %
+        x_2 \cdot \delta_2 \cdot \delta_3 +
+        x_3 \cdot \delta_3 %
+\end{align}
+
+\end{frame}

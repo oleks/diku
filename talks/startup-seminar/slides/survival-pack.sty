@@ -1,0 +1,37 @@
+\ProvidesPackage{survival-pack}
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+
+\RequirePackage{xparse}
+
+\NewDocumentCommand\ceil{m}{%
+  {\ensuremath{%
+    \mathopen{}%
+      \left\lceil%
+        {#1}%
+      \right\rceil%
+    \mathclose{}%
+  }}%
+}
+
+\NewDocumentCommand\p{m}{%
+  {\ensuremath{%
+    \mathopen{}%
+      \left(%
+        {#1}%
+      \right)%
+    \mathclose{}%
+  }}%
+}
+
+\NewDocumentCommand\card{m}{%
+  {\ensuremath{%
+    \mathopen{}%
+      \left|%
+        {#1}%
+      \right|%
+    \mathclose{}%
+  }}%
+}
