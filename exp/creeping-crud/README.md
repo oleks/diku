@@ -99,7 +99,7 @@ The `TONEAREST` rounding mode breaks ties to even. This is not the only way
 defined by IEEE-754, 2008. There is also breaking ties away from zero.
 
 A similar inconsistency leads to a range of inconsistencies between the
-printing of floating-point numbers in various programming environment. (See
+printing of floating-point numbers in various programming environments. (See
 Rick Regan. _Inconsistent Rounding of Printed Floating-Point Numbers_.
 Exploring Binary. 2016-05-17.
 http://www.exploringbinary.com/inconsistent-rounding-of-printed-floating-point-numbers/.
