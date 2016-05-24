@@ -1,0 +1,95 @@
+\begin{frame}
+
+\frametitle{Floating-Point}
+
+\begin{center}
+
+A floating-point value is a triplet $\p{s,f,e}$, representing the mathematical
+value\footnote{Typically, $\beta = 2$.}
+
+$$(-1)^s \cdot f \cdot \beta^e.$$
+
+\end{center}
+
+\vspace{\fill}
+
+Fitting this triplet onto the conventional digital quanta of \\ 8, 16, 32, 64,
+etc. bits presents a number of challenges:
+
+\begin{itemize}
+
+\item Should we prioritze $f$ (significand) or $e$ (exponent)?
+
+\item Can we have an arithmetic closed under basic operations?
+
+\item What about exceptional behaviour (e.g., divide by $0$)?
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+
+\frametitle{IEEE 754 Floating-Point}
+
+For the functional programmer:
+
+\begin{lstlisting}[language=haskell,numbers=none]
+data FP
+  = Normal    Sign Significand Exponent
+  | Infinity  Sign
+  | NaN       Payload -- Payload carries the reason for the NaN.
+  | Zero      Sign
+  | Subnormal Sign Significand -- Allows gradual underflow.
+\end{lstlisting}
+
+\vspace{\fill}
+
+\begin{itemize}
+
+\item Designed for portability (but doesn't always succeed).
+
+\item Closure is achieved through rounding (next slide).
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+
+\frametitle{IEEE 754 Floating-Point --- Rounding}
+
+\vspace{\fill}
+
+\begin{center}
+
+Perform every operation as if with infinite precision, \\ rounded to fit
+the desired resulting precision.
+
+\end{center}
+
+\vspace{\fill}
+
+\footnotesize
+
+\begin{itemize}
+
+\item Round towards positive infinity.
+
+\item Round towards negative infinity.
+
+\item Round towards zero.
+
+\item Round to nearest, ties to even (most common, default).
+
+\item Round to nearest, ties away from zero (optional for base 2).
+
+\item Custom rounding modes are allowed\ldots
+
+\end{itemize}
+
+\vspace{\fill}
+
+\end{frame}

@@ -1,6 +1,20 @@
 \begin{frame}
 
-\frametitle{Half, Single, Double, Quadruple Precision! (1/2)}
+\frametitle{Half, Single, Double, Quadruple Precision! (1/3)}
+
+\vspace{\fill}
+
+\begin{center}
+
+\begin{tabular}{r|l|l|l}
+& Total & Exponent & Significand \\ \hline
+Half & \texttt{16} & \texttt{5} & \texttt{10} \\
+Single & \texttt{32} & \texttt{8} & \texttt{23} \\
+Double & \texttt{64} & \texttt{11} & \texttt{52} \\
+Quadruple & \texttt{128} & \texttt{15} & \texttt{112} \\ \hline
+\end{tabular}
+
+\end{center}
 
 \vspace{\fill}
 
@@ -20,9 +34,10 @@ Higher means better, right? Right?
 
 \end{frame}
 
+
 \begin{frame}
 
-\frametitle{Half, Single, Double, Quadruple Precision! (2/2)}
+\frametitle{Half, Single, Double, Quadruple Precision! (2/3)}
 
 \begin{columns}[t]
 
@@ -80,14 +95,43 @@ Higher means better, right? Right?
 
 \item<4-> Higher precision means higher range of exponent.
 
+\end{itemize}
+
+\vspace{\fill}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Half, Single, Double, Quadruple Precision! (3/3)}
+
+\vspace{\fill}
+
 \begin{itemize}
 
-\item Single: 8-bit exponent; Double: 11-bit exponent.
+\item Higher precision does not guarantee better
+accuracy\cite{cuyt-et-al-2001}.
 
-\end{itemize}
+\item Identical output in higher precision is unreliable\cite{cuyt-et-al-2001}.
+
+\item Instability can happen without cancellation\cite{higham-2002}.
 
 \end{itemize}
 
 \vspace{\fill}
+
+\footnotesize
+
+\begin{thebibliography}{9}
+
+\bibitem{cuyt-et-al-2001} A. Cuyt, B. Verdonk, S. Becuwe, and P. Kuterna.
+\emph{A Remarkable Example of Catastrophic Cancellation Unraveled}. Computing
+66(3): 309--320, 2001.
+
+\bibitem{higham-2002} Nicholas J. Higham. \emph{Accuracy and Stability of
+Numerical Algorithms}. Second Edition. SIAM, 2002.
+
+\end{thebibliography}
 
 \end{frame}
