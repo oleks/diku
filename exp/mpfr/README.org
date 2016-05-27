@@ -2,6 +2,11 @@
 
 ** Language Support
 
+  * [[https://www.r-project.org/about.html][R]] has support for MPFR via the
+    [[https://cran.r-project.org/web/packages/Rmpfr/index.html][Rmpfr]]
+    package. The precision and rounding mode can be specified when creating an
+    instance MPFR number object.
+
   * [[http://julialang.org/][Julia]]
     [[http://docs.julialang.org/en/release-0.4/manual/integers-and-floating-point-numbers/#arbitrary-precision-arithmetic][wraps
     MPFR]] in a data-type =BigFloat=. The default precision and rounding mode for a
