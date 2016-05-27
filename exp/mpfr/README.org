@@ -17,8 +17,8 @@ results[3,4].
 multiple-precision binary floating-point library with correct rounding. ACM
 Trans. Math. Softw. 33, 2, Article 13, 2007.
 
-[2] M. Mächler. Arbitrarily Accurate Computation with R: The Rmpfr Package.
-2015. Available via CRAN:
+[2] M. Mächler. Arbitrarily Accurate Computation with R: The Rmpfr
+Package. 2015. Available via CRAN:
 https://cran.r-project.org/web/packages/Rmpfr/vignettes/Rmpfr-pkg.pdf.
 
 [3] A. Cuyt, B. Verdonk, S. Becuwe, and P. Kuterna. A Remarkable Example of
