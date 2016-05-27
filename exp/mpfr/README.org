@@ -10,7 +10,7 @@ of the target variable. A major inhibit to the usability of MPFR is the need to
 explicitly choose a precision and rounding mode for the target variable.
 
 This choice is not always intuitive, and choosing higher precision or a
-different rounding mode does not necessarily lead to more accurate results.
+different rounding mode, does not necessarily lead to more accurate results.
 
 ** Language Support
 
