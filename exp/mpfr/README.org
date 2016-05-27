@@ -11,7 +11,9 @@ explicitly choose a precision and rounding mode for the target variable.
 
 This choice is not always intuitive, and choosing higher precision or a
 different rounding mode, does not necessarily lead to more accurate
-results[3,4].
+results[3,4]. Furthermore, intermediate computations don't necessarily have to
+be done with a precision and rounding mode of the target variable to obtain a
+conforming final result[4].
 
 [1] L. Fousse, G. Hanrot, V. Lefèvre, P. Pélissier, and P. Zimmermann. MPFR: A
 multiple-precision binary floating-point library with correct rounding. ACM
