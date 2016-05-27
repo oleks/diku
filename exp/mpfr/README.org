@@ -12,6 +12,14 @@ explicitly choose a precision and rounding mode for the target variable.
 This choice is not always intuitive, and choosing higher precision or a
 different rounding mode, does not necessarily lead to more accurate results.
 
+[1] L. Fousse, G. Hanrot, V. Lefèvre, P. Pélissier, and P. Zimmermann. _MPFR: A
+multiple-precision binary floating-point library with correct rounding_. ACM
+Trans. Math. Softw. 33, 2, Article 13, 2007.
+
+[2] M. Mächler. _Arbitrarily Accurate Computation with R: The Rmpfr
+Package_. 2015. Available via CRAN:
+https://cran.r-project.org/web/packages/Rmpfr/vignettes/Rmpfr-pkg.pdf.
+
 ** Language Support
 
   * [[https://www.r-project.org/about.html][R]] has support for MPFR via the
@@ -23,11 +31,3 @@ different rounding mode, does not necessarily lead to more accurate results.
     [[http://docs.julialang.org/en/release-0.4/manual/integers-and-floating-point-numbers/#arbitrary-precision-arithmetic][wraps
     MPFR]] in a data-type =BigFloat=. The default precision and rounding mode for a
     =BigFloat= can be specified globally, or locally for a block of code.
-
-[1] L. Fousse, G. Hanrot, V. Lefèvre, P. Pélissier, and P. Zimmermann. _MPFR: A
-multiple-precision binary floating-point library with correct rounding_. ACM
-Trans. Math. Softw. 33, 2, Article 13, 2007.
-
-[2] M. Mächler. _Arbitrarily Accurate Computation with R: The Rmpfr
-Package_. 2015. Available via CRAN:
-https://cran.r-project.org/web/packages/Rmpfr/vignettes/Rmpfr-pkg.pdf.
