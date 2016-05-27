@@ -1,5 +1,18 @@
 #+TITLE: MPFR — Multiple-Precision Floating-Point with Correct Rounding
 
+[[http://www.mpfr.org/][GNU MPFR]] is a multiple-preicicion floating-point
+library that implements correct rounding. It is sometimes also called
+Multiple-Precision Floating-point Reliable[fn:1]. GNU MPFR is licenser under
+LGPL.
+
+MPFR implements "correct rounding" in the sense that the result of an MPFR
+operation is rounded to fit the precision, and according to the rounding mode
+of the target variable. A major inhibit to the usability of MPFR is the need to
+explicitly choose a precision and rounding mode for the target variable.
+
+This choice is not always intuitive, and choosing higher precision or a
+different rounding mode does not necessarily lead to more accurate results.
+
 ** Language Support
 
   * [[https://www.r-project.org/about.html][R]] has support for MPFR via the
@@ -11,3 +24,7 @@
     [[http://docs.julialang.org/en/release-0.4/manual/integers-and-floating-point-numbers/#arbitrary-precision-arithmetic][wraps
     MPFR]] in a data-type =BigFloat=. The default precision and rounding mode for a
     =BigFloat= can be specified globally, or locally for a block of code.
+
+[fn:1] Martin Mächler. _Arbitrarily Accurate Computation with R: The Rmpfr
+Package_. 2015. Available via CRAN:
+https://cran.r-project.org/web/packages/Rmpfr/vignettes/Rmpfr-pkg.pdf.
