@@ -1,0 +1,8 @@
+#+TITLE: MPFR — Multiple-Precision Floating-Point with Correct Rounding
+
+** Language Support
+
+  * [[http://julialang.org/][Julia]]
+    [[http://docs.julialang.org/en/release-0.4/manual/integers-and-floating-point-numbers/#arbitrary-precision-arithmetic][wraps
+    MPFR]] in a data-type =BigFloat=. The default precision and rounding mode for a
+    =BigFloat= can be specified globally, or locally for a block of code.
