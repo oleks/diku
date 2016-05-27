@@ -10,7 +10,8 @@ of the target variable. A major inhibit to the usability of MPFR is the need to
 explicitly choose a precision and rounding mode for the target variable.
 
 This choice is not always intuitive, and choosing higher precision or a
-different rounding mode, does not necessarily lead to more accurate results[3].
+different rounding mode, does not necessarily lead to more accurate
+results[3,4].
 
 [1] L. Fousse, G. Hanrot, V. Lefèvre, P. Pélissier, and P. Zimmermann. _MPFR: A
 multiple-precision binary floating-point library with correct rounding_. ACM
@@ -22,6 +23,11 @@ https://cran.r-project.org/web/packages/Rmpfr/vignettes/Rmpfr-pkg.pdf.
 
 [3] A. Cuyt, B. Verdonk, S. Becuwe, and P. Kuterna. _A Remarkable Example of
 Catastrophic Cancellation Unraveled_. Computing 66(3): 309–320, 2001.
+
+[4] H. Kawabata, H. Iwasaki, and P. Thiemann. _Improving Floating-Point
+Numbers: A Lazy Approach to Adaptive Accuracy Refinement for Numerical
+Computations_. Programming Languages and Systems: 25th European Symposium on
+Programming, ESOP, 390-418. Springer, 2016.
 
 ** Language Support
 
