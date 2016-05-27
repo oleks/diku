@@ -28,6 +28,6 @@ different rounding mode, does not necessarily lead to more accurate results.
 multiple-precision binary floating-point library with correct rounding_. ACM
 Trans. Math. Softw. 33, 2, Article 13, 2007.
 
-[2] M. Mächler. _Arbitrarily Accurate Computation with R: The Rmpfr Package_.
-2015. Available via CRAN:
+[2] M. Mächler. _Arbitrarily Accurate Computation with R: The Rmpfr
+Package_. 2015. Available via CRAN:
 https://cran.r-project.org/web/packages/Rmpfr/vignettes/Rmpfr-pkg.pdf.
