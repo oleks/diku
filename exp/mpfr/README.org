@@ -4,7 +4,7 @@
 library that implements correct rounding. It is sometimes also called
 Multiple-Precision Floating-point Reliable[1]. GNU MPFR is licenser under LGPL.
 
-MPFR implements "correct rounding" in the sense that the result of an MPFR
+MPFR implements correct rounding in the sense that the result of an MPFR
 operation is rounded to fit the precision, and according to the rounding mode
 of the target variable. A major inhibit to the usability of MPFR is the need to
 explicitly choose a precision and rounding mode for the target variable.
