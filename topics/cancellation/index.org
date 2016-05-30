@@ -22,7 +22,7 @@ For instance, consider computing $\hat{x}=\hat{a}-\hat{b}$.
 
 We have that $\hat{a} = a \cdot \left( 1 + \Delta a \right)$ and $\hat{b} = b
 \cdot \left( 1 + \Delta b \right)$, where $\Delta a$ and $\Delta b$ are some
-committed errors.
+previously committed errors.
 
 The absolute error is therefore:
 
@@ -62,3 +62,4 @@ If $\left| a - b \right| \ll \left| a \Delta a - b \Delta b \right|$ (i.e.,
 $\Delta a$ and/or $\Delta b$ is non-zero, and $a$ is almost equal to $b$), then
 the relative error increases much more than the absolute error.
 
+Cancellation magnifies previously comitted error.
