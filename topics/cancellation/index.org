@@ -59,7 +59,8 @@ And the relative error is
 \end{align*}
 
 If $\left| a - b \right| \ll \left| a \Delta a - b \Delta b \right|$ (i.e.,
-$\Delta a$ and/or $\Delta b$ is non-zero, and $a$ is almost equal to $b$), then
-the relative error increases much more than the absolute error.
+$\Delta a$ and/or $\Delta b$ is non-zero, and $a$ is almost equal to $b$, while
+$\Delta a$ and $\Delta b$ differ), then the relative error increases much more
+than the absolute error.
 
 Cancellation magnifies previously comitted error.
