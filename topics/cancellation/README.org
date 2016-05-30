@@ -1,0 +1,64 @@
+#+TITLE: Cancellation
+#+OPTIONS: tex:imagemagick
+
+Let $\hat{x}=x\cdot \left(1+\Delta x\right)$ be an approximation of an exact
+value $x$.
+
+Absolute error is the difference between the exact value and its approximation:
+$\left|x-\hat{x}\right|=\left| \Delta x \right|$.
+
+Relative error is absolute error discounted by the exact value:
+$\frac{\left| x - \hat{x}\right| }{ \left| x \right| } =
+\frac{\left| \Delta x \right| }{ \left| x \right| }$.
+
+/Cancellation/ is the phenomena of the relative error growing much faster than
+the absolute error throughout a computation.
+
+For instance, consider computing $\hat{x}=\hat{a}-\hat{b}$.
+
+We have that $\hat{a} = a \cdot \left( 1 + \Delta a \right)$ and $\hat{b} = b
+\cdot \left( 1 + \Delta b \right)$, where $\Delta a$ and $\Delta b$ are some
+committed errors.
+
+The absolute error is therefore:
+
+\begin{align*}
+\left| x - \hat{x} \right|
+&= \left| \left( a - b \right) - \left(
+      \hat{a} - \hat{b}
+    \right) \right| \\
+&= \left| \left( a - b \right) - \left(
+        a \cdot \left( 1 + \Delta a \right) -
+        b \cdot \left( 1 + \Delta b \right)
+    \right) \right| \\
+&= \left| \left( a - b \right) - \left(
+        a + a \Delta a -
+        b - b \Delta b
+    \right) \right| \\
+&= \left| \left( a - b \right) -
+        a - a \Delta a +
+        b + b \Delta b
+    \right| \\
+&= \left| a - b -
+        a - a \Delta a +
+        b + b \Delta b
+    \right| \\
+&= \left| - a \Delta a + b \Delta b \right| \\
+&= \left| a \Delta a - b \Delta b \right|
+\end{align*}
+
+And the relative error is:
+
+\begin{align*}
+\frac{\left| x - \hat{x} \right|}{\left| x \right|}
+&= \frac{\left| a \Delta a - b \Delta b \right|}{\left| a - b \right|}
+\end{align*}
+
+If $\left| a - b \right| \ll \left| a \Delta a - b \Delta b \right|$ (i.e.,
+$\Delta a$ and/or $\Delta b$ is non-zero, and $a$ is almost equal to $b$), then
+the relative error increases much more than the absolute error.
+
+In terms of the above inequalities, this means that $\left| \Delta x \right|
+\ll \frac{\left| \Delta x \right| }{ \left| x \right| }$. This happens when
+$\left| x \right| \ll \left| \Delta x \right|$, or simply $\left| x \right| \ll
+1$.
