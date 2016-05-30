@@ -14,6 +14,10 @@ $\frac{\left| x - \hat{x}\right| }{ \left| x \right| } =
 /Cancellation/ is the phenomena of the relative error growing much faster than
 the absolute error throughout a computation.
 
+In terms of the above definitions, this means that $\left| \Delta x \right| \ll
+\frac{\left| \Delta x \right| }{ \left| x \right| }$, or more conretely,
+$\left| x \right| \ll 1$.
+
 For instance, consider computing $\hat{x}=\hat{a}-\hat{b}$.
 
 We have that $\hat{a} = a \cdot \left( 1 + \Delta a \right)$ and $\hat{b} = b
@@ -58,7 +62,3 @@ If $\left| a - b \right| \ll \left| a \Delta a - b \Delta b \right|$ (i.e.,
 $\Delta a$ and/or $\Delta b$ is non-zero, and $a$ is almost equal to $b$), then
 the relative error increases much more than the absolute error.
 
-In terms of the above inequalities, this means that $\left| \Delta x \right|
-\ll \frac{\left| \Delta x \right| }{ \left| x \right| }$. This happens when
-$\left| x \right| \ll \left| \Delta x \right|$, or simply $\left| x \right| \ll
-1$.
