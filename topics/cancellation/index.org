@@ -24,7 +24,7 @@ We have that $\hat{a} = a \cdot \left( 1 + \Delta a \right)$ and $\hat{b} = b
 \cdot \left( 1 + \Delta b \right)$, where $\Delta a$ and $\Delta b$ are some
 previously committed errors.
 
-The absolute error is therefore:
+The absolute error is
 
 \begin{align*}
 \left| x - \hat{x} \right|
@@ -48,14 +48,14 @@ The absolute error is therefore:
         b + b \Delta b
     \right| \\
 &= \left| - a \Delta a + b \Delta b \right| \\
-&= \left| a \Delta a - b \Delta b \right|
+&= \left| a \Delta a - b \Delta b \right|.
 \end{align*}
 
-And the relative error is:
+And the relative error is
 
 \begin{align*}
 \frac{\left| x - \hat{x} \right|}{\left| x \right|}
-&= \frac{\left| a \Delta a - b \Delta b \right|}{\left| a - b \right|}
+&= \frac{\left| a \Delta a - b \Delta b \right|}{\left| a - b \right|}.
 \end{align*}
 
 If $\left| a - b \right| \ll \left| a \Delta a - b \Delta b \right|$ (i.e.,
