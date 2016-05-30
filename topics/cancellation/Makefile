@@ -1,6 +1,6 @@
 DEPENDS=Makefile
 
-all: README.html
+all: index.html
 
 %.html: %.org $(DEPENDS)
 	emacs $< --batch -f org-html-export-to-html --kill
