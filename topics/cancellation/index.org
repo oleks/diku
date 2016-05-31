@@ -1,28 +1,52 @@
 #+TITLE: Cancellation
 #+OPTIONS: tex:imagemagick
 
-Let $\hat{x}=x\cdot \left(1+\Delta x\right)$ be an approximation of an exact
-value $x$.
+Let $\hat{x}=x \left(1+\Delta x\right)$ be an approximation of an exact value
+$x$.
 
-Absolute error is the difference between the exact value and its approximation:
-$\left|x-\hat{x}\right|=\left| \Delta x \right|$.
+Absolute error is the magnitude of the difference between the exact value and
+its approximation: $\left|x-\hat{x}\right|$.
 
-Relative error is absolute error discounted by the exact value:
-$\frac{\left| x - \hat{x}\right| }{ \left| x \right| } =
-\frac{\left| \Delta x \right| }{ \left| x \right| }$.
+By definition of $\hat{x}$, we have
+
+\begin{align*}
+\left| x - \hat{x} \right|
+&= \left| x - x \left( 1 + \Delta x \right) \right| \\
+&= \left| x - x - x \Delta x \right| \\
+&= \left| - x \Delta x \right| \\
+&= \left| x \Delta x \right|.
+\end{align*}
+
+Relative error is absolute error discounted by the magnitude exact value:
+$\frac{\left| x - \hat{x}\right| }{ \left| x \right| }$.
+
+We have
+
+\begin{align*}
+\frac{\left| x - \hat{x}\right| }{ \left| x \right| }
+&= \frac{ \left| x \Delta x \right| }{ \left| x \right| } \\
+&= \left| \frac{ x \Delta x }{ x } \right| \\
+&= \left| \Delta x \right|.
+\end{align*}
 
 /Cancellation/ is the phenomena of the relative error growing much faster than
 the absolute error throughout a computation.
 
-In terms of the above definitions, this means that $\left| \Delta x \right| \ll
-\frac{\left| \Delta x \right| }{ \left| x \right| }$, or more conretely,
-$\left| x \right| \ll 1$.
+So cancellation occurs when
+
+\begin{align*}
+\left| x \Delta x \right|
+&\ll \left| \Delta x \right| \\
+\left| x \right| \cdot \left| \Delta x \right|
+&\ll \left| \Delta x \right| \\
+\left| x \right| &\ll 1.
+\end{align*}
 
 For instance, consider computing $\hat{x}=\hat{a}-\hat{b}$.
 
-We have that $\hat{a} = a \cdot \left( 1 + \Delta a \right)$ and $\hat{b} = b
-\cdot \left( 1 + \Delta b \right)$, where $\Delta a$ and $\Delta b$ are some
-previously committed errors.
+We have that $\hat{a} = a \left( 1 + \Delta a \right)$ and $\hat{b} = b \left(
+1 + \Delta b \right)$, where $\Delta a$ and $\Delta b$ are some previously
+committed errors.
 
 The absolute error is
 
@@ -32,8 +56,8 @@ The absolute error is
       \hat{a} - \hat{b}
     \right) \right| \\
 &= \left| \left( a - b \right) - \left(
-        a \cdot \left( 1 + \Delta a \right) -
-        b \cdot \left( 1 + \Delta b \right)
+        a \left( 1 + \Delta a \right) -
+        b \left( 1 + \Delta b \right)
     \right) \right| \\
 &= \left| \left( a - b \right) - \left(
         a + a \Delta a -
