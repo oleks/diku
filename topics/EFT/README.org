@@ -1,0 +1,3 @@
+GitHub isn't great with [[http://www.nongnu.org/skribilo/][skribilo]], but it
+is a great web-server. See
+[[https://oleks.github.io/phd/topics/EFT/][the GitHub page]].
