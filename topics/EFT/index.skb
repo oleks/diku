@@ -1,4 +1,12 @@
+(use-modules (skribilo package eq))
+
 (document
   :title [Error-Free Transformations]
+  :encoding "UTF-8"
 
-  [Test.])
+  [An ,(emph [error-free transformation]) ,(code "f") is a binary operation
+which computes an approximation ,(eq '[f'(x,y)]) of a mathematical function
+,(eq '[f(x,y)]) by transforming the input pair ,(code "(x,y)") into an output
+pair ,(code "(r,e)"), where ,(code "r") corresponds to ,(eq '[f'(x,y)]), and
+,(code "e") corresponds to the absolute error of this approximation, i.e. ,(eq
+'(- '[f'(x,y)] '[f(x, y)])).])
