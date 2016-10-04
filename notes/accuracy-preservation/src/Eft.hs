@@ -60,3 +60,18 @@ twomul a b =
       e3 = e2 - (ahi * blo)
       y = (alo * blo) - e3
   in (x, y)
+
+-- Shewchuk 1997
+scaleexp :: [Double] -> Double -> [Double]
+scaleexp [] _ = []
+scaleexp (e:es) b =
+  let (q, h) = twomul e b
+      (q', hs) = foldl scale' (q, [h]) es
+  in  q':hs
+  where
+    scale' (q, hs) d =
+      let
+        (thi, tlo) = twomul d b
+        (q', h') = twosum q tlo
+        (q'', h'') = twosum thi q'
+      in (q'', h'':h':hs)
