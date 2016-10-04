@@ -6,9 +6,6 @@ import Data.List ( intercalate )
 import Numeric ( showHex, showIntAtBase )
 import Unsafe.Coerce ( unsafeCoerce )
 
-newtype ECDouble = ECDouble (Double, [Double])
-  deriving (Show)
-
 -- Knuth 1997
 twosum :: Double -> Double -> (Double, Double)
 twosum a b =
