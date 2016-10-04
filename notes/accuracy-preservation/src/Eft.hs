@@ -20,6 +20,12 @@ growexp es b =
     vn = snd $ last ps
   in vs ++ [vn]
 
+nozero :: [Double] -> [Double]
+nozero = filter (/= 0.0)
+
+esum :: [Double] -> [Double]
+esum = nozero . foldl growexp []
+
 -- Shewchuk 1997
 expsum :: [Double] -> [Double] -> [Double]
 expsum es [0.0] = es  -- fast
@@ -33,9 +39,3 @@ expsum es fs =
       in  if h == 0.0     -- fast
           then (hs', hs'')
           else (h:hs', hs'')
-
-nozero :: [Double] -> [Double]
-nozero = filter (/= 0.0)
-
-esum :: [Double] -> [Double]
-esum = nozero . foldl growexp []
