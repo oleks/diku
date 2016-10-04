@@ -7,10 +7,7 @@ import Test.Tasty.QuickCheck
 
 properties :: TestTree
 properties = testGroup "QuickCheck"
-  [ testProperty "" $
-    \ds -> foldl' growexp ds ==
-      foldl' (\es d -> expsum es [d]) ds
-  , testProperty "expsum is associative" $
+  [ testProperty "expsum is associative" $
     \ds -> foldl' (\es d -> expsum es [d]) ds ==
       foldl' (\es d -> expsum [d] es) ds
   , testProperty "esum doesn't grow unboudedly" $
