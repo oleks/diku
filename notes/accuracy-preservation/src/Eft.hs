@@ -69,9 +69,24 @@ scaleexp (e:es) b =
       (q', hs) = foldl scale' (q, [h]) es
   in  q':hs
   where
-    scale' (q, hs) d =
+    scale' (q, hs) x =
       let
-        (thi, tlo) = twomul d b
+        (thi, tlo) = twomul x b
         (q', h') = twosum q tlo
         (q'', h'') = twosum thi q'
       in (q'', h'':h':hs)
+
+
+expdiv :: [Double] -> Double -> [Double]
+expdiv xs d =
+  let (cs, rs) = foldl expdiv' ([], []) xs
+  in  (reverse rs) ++ cs
+  where
+    expdiv' (cs, ys) x =
+      let
+        (r:cs') = expsum [x] cs
+        y = r / d
+        (r', cs''') = twomul y d
+        cs'' = r - r'
+        cs'''' = growexp (growexp cs' cs'') cs'''
+      in (cs'''', y:ys)
