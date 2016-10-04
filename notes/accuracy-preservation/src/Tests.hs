@@ -13,8 +13,8 @@ properties = testGroup "QuickCheck"
   , testProperty "expsum is associative" $
     \ds -> foldl' (\es d -> expsum es [d]) ds ==
       foldl' (\es d -> expsum [d] es) ds
-  , testProperty "growexp doesn't grow unboudedly" $
-    \ds -> length (nozero $ foldl' growexp ds) < 41
+  , testProperty "esum doesn't grow unboudedly" $
+    \ds -> length (esum ds) < 41
   ]
   where
       foldl' :: ([Double] -> Double -> [Double]) -> [Double] -> [Double]
