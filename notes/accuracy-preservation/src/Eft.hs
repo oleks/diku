@@ -39,3 +39,24 @@ expsum es fs =
       in  if h == 0.0     -- fast
           then (hs', hs'')
           else (h:hs', hs'')
+
+-- Dekker 1971
+split :: Double -> (Double, Double)
+split a =
+  let c   = 2097153 * a
+      ab  = c - a
+      ahi = c - ab
+      alo = a - ahi
+  in (ahi, alo)
+
+-- Dekker 1971
+twomul :: Double -> Double -> (Double, Double)
+twomul a b =
+  let x = a * b
+      (ahi, alo) = split a
+      (bhi, blo) = split b
+      e1 = x - (ahi * bhi)
+      e2 = e1 - (alo * bhi)
+      e3 = e2 - (ahi * blo)
+      y = (alo * blo) - e3
+  in (x, y)
