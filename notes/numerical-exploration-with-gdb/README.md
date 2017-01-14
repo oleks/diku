@@ -13,8 +13,7 @@ practical introduction to GDB.
 
 GDB can relate each run-time computational step to either (1) a line of source
 code you've written, or (2) the assembly code actually being run. If GDB has
-support for your systems programming language, GDB can keep you informed about
-which line of source code the binary is currently at, and if nothing else, it
-can tell you which underlying assembly instruction is about to be executed
-next, the current state of the registers and memory from the point of view of
-the process being debugged.
+support for your programming language, GDB can keep you informed about which
+line of source code the binary is currently at. If not, it can at you about the
+underlying assembly instructions being executed, the current state of the
+registers and memory.
