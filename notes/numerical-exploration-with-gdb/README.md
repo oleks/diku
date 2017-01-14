@@ -6,8 +6,8 @@ the run-time behaviour of _any_ binary.
 
 These notes use GDB to explore the low-level behaviour of baseline numerical
 code. As a real-world debugger, GDB can give us an honest view of the
-real-world semantics of numerical computation. The hope is that this will give
-you an introduction to how computers perform numerical operations, as well as
+real-world semantics of numerical operations. The hope is that this will give
+you an introduction to how computers perform numerical computation, as well as
 serve as a practical introduction to GDB.
 
 GDB can relate each run-time computational step to either (1) a line of source
