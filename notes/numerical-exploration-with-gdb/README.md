@@ -1,9 +1,8 @@
 # Numerical Exploration with GDB
 
 The GNU Debugger (GDB) is a ubiquitous debugging tool for systems programming
-in the realm of Unix-like operating systems. Armed with operating-system
-support for GDB, you can use GDB to explore the run-time behaviour of arbitrary
-binaries.
+in the realm of Unix-like operating systems. Armed with GDB, you can explore
+the run-time behaviour of _any_ binary.
 
 The following note will attempt to introduce you to GDB by using it for the
 exploration of the low-level behaviour of baseline numerical computations. This
