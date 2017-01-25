@@ -8,6 +8,6 @@ RUN apk add --update --no-cache \
 
 WORKDIR /home/franko
 
-COPY . .
+COPY src .
 
 ENTRYPOINT ["/bin/ash"]
