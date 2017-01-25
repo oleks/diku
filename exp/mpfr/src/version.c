@@ -1,7 +1,7 @@
 /// MPFR Version Insepctor
 ///
 /// Shamelessly copied from the MPFR documentation:
-/// http://www.mpfr.org/mpfr-current/mpfr.html#Basic-Arithmetic-Functions
+/// http://www.mpfr.org/mpfr-current/mpfr.html#Installing-MPFR
 
 #include <stdio.h>
 #include <mpfr.h>
