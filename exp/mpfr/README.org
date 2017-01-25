@@ -9,11 +9,10 @@ operation is rounded to fit the precision, and according to the rounding mode
 of the target variable. A major inhibit to the usability of MPFR is the need to
 explicitly choose a precision and rounding mode for the target variable.
 
-This choice is not always intuitive, and choosing higher precision or a
+This choice is not always intuitive, and choosing higher precision, or a
 different rounding mode, does not necessarily lead to more accurate
-results[3,4]. Furthermore, intermediate computations don't necessarily have to
-be done with a precision and rounding mode of the target variable to obtain a
-conforming final result[4].
+results[3,4]. Furthermore, the accuracy of the final result is not equally
+sensitive to the precision, or rounding mode, of the individual operations[4].
 
 [1] L. Fousse, G. Hanrot, V. Lefèvre, P. Pélissier, and P. Zimmermann. MPFR: A
 multiple-precision binary floating-point library with correct rounding. ACM
