@@ -44,7 +44,7 @@ franko@docker:~ $ make
 #+END_SRC
 
 This will drop you into a shell with the =.c= programs from [[src][src]]
-compiled into binaries ending in =.bin=.
+compiled as binaries ending in =.bin=.
 
 ** Language Support
 
