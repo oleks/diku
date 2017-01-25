@@ -45,3 +45,9 @@ ESOP, 390-418. Springer, 2016.
     [[http://docs.julialang.org/en/release-0.4/manual/integers-and-floating-point-numbers/#arbitrary-precision-arithmetic][wraps
     MPFR]] in a data-type =BigFloat=. The default precision and rounding mode for a
     =BigFloat= can be specified globally, or locally for a block of code.
+
+  * You can also try out MPFR
+    [[http://ex-cs.sist.ac.jp/~tkouya/try_mpfr.html][online]], without
+    installing it first. This is not a JavaScript implementation, but a CGI
+    script. Some people have tried compiling 32-bit GMP+MPFR to JavaScript
+    using [[https://github.com/kripken/emscripten][Emscripten]].
