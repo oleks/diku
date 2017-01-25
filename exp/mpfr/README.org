@@ -38,8 +38,9 @@ and some MPFR programs under [[src][src]].
 To run the programs, provied you already have a Docker daemon running, do this:
 
 #+BEGIN_SRC
-$ make interact
-$ make
+you@yourmachine $ make interact
+# Docker magic happens here..
+franko@docker:~ $ make
 #+END_SRC
 
 This will drop you into a shell with the =.c= programs from [[src][src]]
