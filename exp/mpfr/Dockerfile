@@ -10,4 +10,8 @@ WORKDIR /home/franko
 
 COPY src .
 
+RUN chown -R franko:franko /home/franko
+
+USER franko
+
 ENTRYPOINT ["/bin/ash"]
