@@ -2,6 +2,10 @@
 ///
 /// Shamelessly copied from the MPFR documentation:
 /// http://www.mpfr.org/mpfr-current/mpfr.html#Installing-MPFR
+///
+/// GLPL Version 3, 29 June 2007
+/// Copyright (c) 2007 Free Software Foundation, Inc. <http://fsf/org/>
+
 
 #include <stdio.h>
 #include <mpfr.h>
