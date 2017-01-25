@@ -30,6 +30,21 @@ A Lazy Approach to Adaptive Accuracy Refinement for Numerical Computations.
 Programming Languages and Systems: 25th European Symposium on Programming,
 ESOP, 390-418. Springer, 2016.
 
+** What is this?
+
+This is a minimal [[https://www.docker.com/][Docker]] image with MPFR support,
+and some MPFR programs under [[src][src]].
+
+To run the programs, provied you already have a Docker daemon running, do this:
+
+#+BEGIN_SRC
+$ make interact
+$ make
+#+END_SRC
+
+This will drop you into a shell with the =.c= programs from [[src][src]]
+compiled into binaries ending in =.bin=.
+
 ** Language Support
 
   * [[https://www.r-project.org/about.html][R]] has support for MPFR via the
